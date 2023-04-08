@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :journal_entries
+  
+  resources :users do 
+    resources :journal_entries
+  end 
+  
   get '/users', to: 'users#index'
   post '/users', to: 'users#create'
-  
   post '/users/sign_in', to: 'user#sign_in'
   delete '/users/sign_out', to: 'users#sign_out'
 
