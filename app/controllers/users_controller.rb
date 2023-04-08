@@ -31,11 +31,10 @@ def sign_in
   end
 end
 
-def log_out
+def sign_out
   session[:user_id] = nil
   render json: { message: "You have been logged out successfully"}
 end
-
 
 
 
